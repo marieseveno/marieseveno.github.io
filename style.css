@@ -592,6 +592,7 @@ section {
 
 .carres {
 	width: 25%;
+	max-width:300px;
 	height: auto;
 	margin: 2%;
 	background-color: transparent;
