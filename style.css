@@ -1,0 +1,625 @@
+* { margin: 0; padding: 0; }
+html {
+	scroll-behavior: smooth;
+}
+html, body { 
+	height: 100%;
+}
+
+body {
+
+/*	overflow: scroll;*/
+	position: relative;
+	background: #F2F0EB;
+	font-family: 'EB Garamond', serif;
+	background-image: url('fond2.png');
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+header {
+	min-height: 100%;
+}
+
+p {
+	margin-bottom: 10px;
+}
+
+h1 {
+	margin: 20px;
+	letter-spacing: 0.5em;
+}
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+	outline: none;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: grey;
+}
+
+
+/* generic styles for button & circular menu */
+
+.ctrl {
+	position: absolute;
+	top: 95%; left: 50%;
+	font: 1.75em/1.13 Verdana, sans-serif;
+	transition: .5s;
+}
+
+.size {
+	font-size: 36px;
+}
+
+
+/* generic link styles */
+
+a.ctrl, .ctrl div {
+	display: block;
+	background: #F2F0EB;
+	color: #84A295;
+	text-align: center;
+	text-decoration: none;
+/*	text-shadow: 0 -1px dimgrey;*/
+}
+
+a.ctrl:hover/*, .ctrl div:hover, a.ctrl:focus */{ 
+ 	color: #cad4d0; 
+
+}
+
+a.ctrl:focus { 
+	outline: none;
+}
+
+.button {
+	z-index: 2;
+	margin: -.625em;
+	width: 1.25em; height: 1.25em;
+/*	border-radius: 50%;
+	box-shadow: 0 0 3px 1px white;*/
+}
+
+
+
+/* circular menu */
+
+.tip {
+	z-index: 1;
+	/**outline: dotted 1px white;/**/
+	margin: -5em;
+	width: 10em; height: 10em;
+	transform: scale(.001);
+	list-style: none;
+	opacity: 0;
+}
+
+
+
+/* the ends of the menu */
+
+/*.tip:before, .tip:after {
+	position: absolute;
+	top: 34.3%;
+	width: .5em; height: 14%;
+	opacity: .56;
+	background: #c9c9c9;
+	content: '';
+}
+
+.tip:before {
+	left: 5.4%;
+	border-radius: .25em 0 0 .25em;
+	box-shadow: -1px 0 1px dimgrey, inset 1px 0 1px white, inset -1px 0 1px grey, 
+				inset 0 1px 1px white, inset 0 -1px 1px white;
+	transform: rotate(-75deg);
+}
+
+.tip:after {
+	right: 5.4%;
+	border-radius: 0 .25em .25em 0;
+	box-shadow: 1px 0 1px dimgrey, inset -1px 0 1px white, inset 1px 0 1px grey,
+				inset 0 1px 1px white, inset 0 -1px 1px white;
+	transform: rotate(75deg);
+}*/
+
+
+/* make the menu appear on click */
+
+.button:focus + .tip {
+	transform: scale(1);
+	opacity: 1;
+}
+
+/* slices of the circular menu */
+
+.slice {
+	overflow: hidden;
+	position: absolute;
+	/**outline: dotted 1px yellow;/**/
+	width: 50%; height: 50%;
+	transform-origin: 100% 100%;
+	margin-right: 10px;
+}
+
+
+/* 
+
+ * rotate each slice at the right angle = (A/2)° + (k - (n+1)/2)*A°
+ * where A is the angle of 1 slice (30° in this case)
+ * k is the number of the slice (in {1,2,3,4,5} here)
+ * and n is the number of slices (5 in this case)
+ * formula works for odd number of slices (n odd)
+ * for even number of slices (n even) the rotation angle is (k - n/2)*A°
+ * 
+ * after rotating, skew on Y by 90°-A°; here A° = the angle for 1 slice = 30° 
+ */
+
+.slice:first-child { transform: rotate(-45deg) skewY(60deg); }
+.slice:nth-child(2) { transform: rotate(-15deg) skewY(60deg); }
+.slice:nth-child(3) { transform: rotate(15deg) skewY(60deg); }
+.slice:nth-child(4) { transform: rotate(45deg) skewY(60deg); }
+.slice:last-child { transform: rotate(75deg) skewY(60deg); }
+
+
+/* covers for the inner part of the links so there's no hover trigger between
+
+   star button & menu links; give them a red background to see them */
+
+.slice:after {
+	position: absolute;
+	top: 32%; left: 32%;
+	width: 136%; height: 136%;
+	border-radius: 50%;
+	/* "unskew" = skew by minus the same angle by which parent was skewed */
+	transform: skewY(-60deg);
+	content: '';
+}
+
+
+/* menu links */
+
+.slice div {
+	color: #000000;
+	width: 200%; height: 200%;
+	border-radius: 0%;
+	box-shadow: 0 0 0 dimgrey, inset 0 0 0 white;
+	/* "unskew" & rotate by -A°/2 */
+	transform: skewY(-60deg) rotate(-15deg);
+	background-size: 15% 15%, 15% 15%, cover;
+	line-height: 1.4;
+}
+
+
+
+/* arrow for middle link */
+
+/*.slice:nth-child(3) div:after {
+	position: absolute;
+	top: 13%; left: 50%;
+	margin: -.25em;
+	width: .5em; height: .5em;
+	box-shadow: 2px 2px 2px white;
+	transform: rotate(45deg);
+	background: linear-gradient(-45deg, #c9c9c9 50%, transparent 50%);
+	content: '';
+}*/
+
+
+
+/*titres*/
+
+
+.photo {
+	text-align: center;
+}
+
+.photo img {
+	width: 175px;
+	height: 175px;
+	border: 3px double #fff;
+	border-radius: 50%;
+	margin-top: 50px;
+}
+
+.signature {
+	text-align: center;
+}
+
+nav {
+	height: 250px;
+	width: 100%;
+}
+
+#contact {
+	text-align: center;
+}
+
+#list-contact {
+	display: inline-block;
+	list-style-type: none;
+	font-size: 1.25em;
+	margin: 0 auto;
+	margin-top: 20px;
+	border-spacing: 50px 2px;
+}
+
+/*SECTION COMPETENCES*/
+
+.h3gauche {
+    width: 90%;
+}
+
+.comp {
+    display:flex;
+    flex-flow: row wrap;
+    margin-bottom: 10px;
+}
+
+.comp p {
+    flex: 0 0 40%;
+}
+
+.conteneur-barre {
+    flex: 0 0 60%;
+    border-radius: 5px;
+    background-color: #F2F0EB;
+    border-bottom: 1px ridge grey;
+}
+
+.barre {
+    display: block;
+    height: 100%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.c90 {
+	width: 90%;
+	background-color: #84A295;
+}
+
+.c65 {
+    width: 65%;
+    background-color: #84A295;
+}
+
+.c60 {
+    width: 60%;
+    background-color: #84A295;
+}
+
+.c25 {
+    width: 25%;
+    background-color: #84A295;
+}
+
+.c50 {
+    width: 50%;
+    background-color: #84A295;
+}
+
+.c85 {
+	width: 85%;
+	background-color: #84A295;
+}
+
+.comp2 {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.conteneur-barre2 {
+    flex: 0 0 90%;
+    height: 0.5em;
+    margin-left: 1em;
+    margin-bottom: 0.25em;
+    border-radius: 5px;
+    background-color: #cad4d0;
+}
+
+ .pourcent {
+ 	margin-right: 1em;
+ }
+
+
+/* TIMELINE */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+section {
+	 line-height: 160%;
+	 color: #4d4d4d;
+}
+
+ .group:after {
+	 content: "";
+	 display: table;
+	 clear: both;
+}
+
+ .fullwidth {
+	 width: 100%;
+	 padding-top: 4rem;
+	 background-color: transparent;
+}
+
+ .timeline {
+	 width: 100%;
+	 max-width: 65rem;
+	 margin-right: auto;
+	 margin-left: auto;
+	 padding-right: 2rem;
+	 padding-bottom: 4rem;
+	 padding-left: 2rem;
+	 background-image: linear-gradient(#999, #999);
+	 background-size: 2px 100%;
+	 background-position: 50% 1rem;
+	 background-repeat: no-repeat;
+}
+
+@media (max-width: 40rem) {
+	 .timeline {
+		background-position: 2rem 0;
+	}
+
+}
+
+.timeline .item {
+	position: relative;
+	display: block;
+	width: 50%;
+	float: left;
+	clear: both;
+	margin-top: -1rem;
+}
+
+@media (max-width: 40rem) {
+	.timeline .item {
+		width: 100%;
+		float: none;
+		margin-top: 0;
+		margin-bottom: 3rem;
+	}
+}
+
+.timeline .item:before {
+	content: '';
+	position: absolute;
+	margin-bottom: 50px;
+	top: 0.3rem;
+	width: 1rem;
+	height: 1rem;
+	border: 2px solid #84A295;
+	border-radius: 50%;
+	background-color: #F2F0EB;
+}
+
+.timeline .item:hover:before {
+	background-color: #84A295;
+	opacity: 0.9;
+}
+
+.timeline .item:first-child {
+	margin-top: 0;
+}
+
+.timeline .item:nth-child(odd) {
+	float: right;
+	padding-left: 2rem;
+}
+
+.timeline .item:nth-child(odd):before {
+	left: -0.6rem;
+}
+
+.timeline .item:nth-child(even) {
+	padding-right: 2rem;
+}
+
+@media (max-width: 40rem) {
+	.timeline .item:nth-child(even) {
+		padding-right: 0;
+		padding-left: 2rem;
+	}
+}
+
+.timeline .item:nth-child(even):before {
+	right: -0.65rem;
+}
+
+@media (max-width: 40rem) {
+	.timeline .item:nth-child(even):before {
+		left: -0.5rem;
+	}
+}
+
+.timeline .item h1 {
+	display: block;
+	margin-bottom: 1rem;
+}
+
+.timeline .item:nth-child(even) h1 {
+	text-align: right;
+}
+
+@media (max-width: 40rem) {
+	.timeline .item:nth-child(even) h1 {
+		text-align: left;
+	}
+}
+
+.box {
+	box-sizing: content-box;
+	width: 100%;
+	margin-bottom: 50px;
+	padding-bottom: 10px;
+	border: 0.5px solid #DAD9D6;
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px 1px rgba(132, 162, 148, .2);
+    position: relative;
+  	background-color: #F2F0EB;
+	text-align: justify;
+}
+
+.box p{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+/*.box2 {
+	box-sizing: content-box;
+	width: 100%;
+	padding-bottom: 10px;
+	border: 0.5px solid #DAD9D6;
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px 1px rgba(132, 162, 148, .2);
+    position: relative;
+  	background-color: #F2F0EB;
+	text-align: left;
+}
+
+.box2 p{
+	margin-left: 20px;
+}*/
+
+.subtitles {
+	margin-bottom: 5px;
+	color: #84A295;
+	font-weight: 900;
+	font-size: 20px;
+
+}
+
+/*ANIMATION*/
+
+.jackInTheBox {
+	-webkit-animation-name: jackInTheBox;
+	animation-name: jackInTheBox;
+	animation-duration: 2s;
+	animation-iteration-count: 3;
+	animation-direction: alternate;
+}
+
+@-webkit-keyframes jackInTheBox {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+    transform: scale(0.1) rotate(30deg);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+
+ 50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes jackInTheBox {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+    transform: scale(0.1) rotate(30deg);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+/*REALISATIONS*/
+
+.container {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.real {
+	background-color: rgba(132, 162, 148, 0.85);
+	padding-top: 20px;
+	min-height: 100vh;
+	width: 100%;
+	z-index: 10000;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.subreal {
+	font-size: 25px;
+	text-align: center;
+	font-variant: small-caps;
+}
+
+.carres {
+	width: 100%;
+	height: auto;
+	margin: 2%;
+	background-color: transparent;
+}
+.rectangle {
+	flex-wrap: wrap;
+	width: 100%;
+	height: auto;
+	margin: 2%;
+	background-color: transparent;
+}
+
+figure {
+    border: 2px #c0c0c0 solid;
+    display: flex;
+    flex-flow: column;
+    margin: auto;
+}
+
+figure img {
+    max-width: 300px;
+    max-height: 100%;
+}
+
+figcaption {
+    background-color: #F2F0EB;
+    color: black;
+    font: caption;
+    padding: 3px;
+    text-align: center;
+}
+
