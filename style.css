@@ -571,7 +571,6 @@ section {
 .container {
 	display: flex;
 	justify-content: space-evenly;
-	
 }
 
 .real {
@@ -591,8 +590,7 @@ section {
 }
 
 .carres {
-	width: 25%;
-	max-width:300px;
+	width: 20%;
 	height: auto;
 	margin: 2%;
 	background-color: transparent;
@@ -600,7 +598,6 @@ section {
 .rectangle {
 	flex-wrap: wrap;
 	width: 25%;
-	max-width: 300px;
 	height: auto;
 	margin: 2%;
 	background-color: transparent;
