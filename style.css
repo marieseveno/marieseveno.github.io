@@ -571,6 +571,7 @@ section {
 .container {
 	display: flex;
 	justify-content: space-evenly;
+	flex-wrap: wrap;
 }
 
 .real {
@@ -590,14 +591,14 @@ section {
 }
 
 .carres {
-	width: 100%;
+	width: 25%;
 	height: auto;
 	margin: 2%;
 	background-color: transparent;
 }
 .rectangle {
 	flex-wrap: wrap;
-	width: 100%;
+	width: 25%;
 	height: auto;
 	margin: 2%;
 	background-color: transparent;
@@ -623,3 +624,49 @@ figcaption {
     text-align: center;
 }
 
+/* REPONSIVE*/
+@media only screen and (max-width: 900px) {
+	h1 {
+		letter-spacing: 0.4em;
+	}
+	.timeline {
+		padding: 1rem;
+	}
+	.container {
+		flex-wrap: wrap;
+/*		flex-direction: column;
+*/	}
+	.carres {
+		width: 45%;
+		margin: auto;
+		margin-bottom: 10px;
+	}
+	.rectangle {
+		width: 45%;
+		margin: auto;
+		margin-bottom: 10px;
+	}
+	figure img {
+		max-width: 100%;
+	}
+
+}
+@media only screen and (max-width: 640px) {
+	.container {
+		flex-direction: column;
+	}
+	.carres {
+		width: 100%;
+		margin: auto;
+		margin-bottom: 10px;
+	}
+	.rectangle {
+		width: 100%;
+		margin: auto;
+		margin-bottom: 10px;
+	}
+	figure img {
+		max-width: 100%;
+	}
+
+}
