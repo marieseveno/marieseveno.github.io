@@ -234,13 +234,23 @@ a.ctrl:focus {
 	text-align: center;
 }
 
-nav {
-	height: 250px;
-	width: 100%;
+.contact {
+	display: grid;
+	justify-content: center;
+	grid-template-columns: repeat(4, 200px);
+	grid-template-rows: repeat(2, 1fr);
 }
 
-#contact {
+.contact2 {
+	display: grid;
+	justify-content: center;
+	grid-template-rows: repeat(8, 35px);
+	display: none;
+}
+
+.intergrid {
 	text-align: center;
+	font-size: 18px;
 }
 
 #list-contact {
@@ -250,6 +260,11 @@ nav {
 	margin: 0 auto;
 	margin-top: 20px;
 	border-spacing: 50px 2px;
+}
+
+nav {
+	height: 250px;
+	width: 100%;
 }
 
 /*SECTION COMPETENCES*/
@@ -623,7 +638,9 @@ figcaption {
     text-align: center;
 }
 
+
 /* REPONSIVE*/
+
 @media only screen and (max-width: 900px) {
 	h1 {
 		letter-spacing: 0.4em;
@@ -648,6 +665,12 @@ figcaption {
 	figure img {
 		max-width: 100%;
 	}
+	.contact {
+		display: none;
+	}
+	.contact2 {
+		display: grid;
+	}
 
 }
 @media only screen and (max-width: 640px) {
@@ -666,6 +689,12 @@ figcaption {
 	}
 	figure img {
 		max-width: 100%;
+	}
+	.contact {
+		display: none;
+	}
+	.contact2 {
+		display: grid;
 	}
 
 }
