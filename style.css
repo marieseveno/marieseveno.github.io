@@ -181,6 +181,7 @@ a.ctrl:focus {
 	border-radius: 50%;
 	/* "unskew" = skew by minus the same angle by which parent was skewed */
 	transform: skewY(-60deg);
+	-webkit-transform: skewY(-60deg);
 	content: '';
 }
 
@@ -191,9 +192,10 @@ a.ctrl:focus {
 	color: #000000;
 	width: 200%; height: 200%;
 	border-radius: 0%;
-	box-shadow: 0 0 0 dimgrey, inset 0 0 0 white;
+	/*box-shadow: 0 0 0 dimgrey, inset 0 0 0 white;
 	/* "unskew" & rotate by -A°/2 */
 	transform: skewY(-60deg) rotate(-15deg);
+	-webkit-transform: skewY(-60deg) rotate(-15deg);
 	background-size: 15% 15%, 15% 15%, cover;
 	line-height: 1.4;
 }
