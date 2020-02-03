@@ -672,3 +672,8 @@ figcaption {
 		top: 100%;
 	}
 }
+@media only screen and (max-height: 600px) {
+	.ctrl {
+		top: 115%;
+	}
+}
