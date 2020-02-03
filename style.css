@@ -674,6 +674,9 @@ figcaption {
 
 }
 @media only screen and (max-width: 640px) {
+	h1 {
+    letter-spacing: 0.2em;
+	}
 	.container {
 		flex-direction: column;
 	}
@@ -696,5 +699,13 @@ figcaption {
 	.contact2 {
 		display: grid;
 	}
-
+	.timeline .item:nth-child(odd):before {
+    left: 0.45rem;
+	}
+	.timeline .item:nth-child(even):before {
+    left: 0.45rem;
+	}
+	.ctrl {
+		top: 100%;
+	}
 }
