@@ -104,34 +104,6 @@ a.ctrl:focus {
 
 
 
-/* the ends of the menu */
-
-/*.tip:before, .tip:after {
-	position: absolute;
-	top: 34.3%;
-	width: .5em; height: 14%;
-	opacity: .56;
-	background: #c9c9c9;
-	content: '';
-}
-
-.tip:before {
-	left: 5.4%;
-	border-radius: .25em 0 0 .25em;
-	box-shadow: -1px 0 1px dimgrey, inset 1px 0 1px white, inset -1px 0 1px grey, 
-				inset 0 1px 1px white, inset 0 -1px 1px white;
-	transform: rotate(-75deg);
-}
-
-.tip:after {
-	right: 5.4%;
-	border-radius: 0 .25em .25em 0;
-	box-shadow: 1px 0 1px dimgrey, inset -1px 0 1px white, inset 1px 0 1px grey,
-				inset 0 1px 1px white, inset 0 -1px 1px white;
-	transform: rotate(75deg);
-}*/
-
-
 /* make the menu appear on click */
 
 .button:focus + .tip {
@@ -181,6 +153,7 @@ a.ctrl:focus {
 	border-radius: 50%;
 	/* "unskew" = skew by minus the same angle by which parent was skewed */
 	transform: skewY(-60deg);
+	-webkit-transform: skewY(-60deg);
 	content: '';
 }
 
@@ -191,28 +164,13 @@ a.ctrl:focus {
 	color: #000000;
 	width: 200%; height: 200%;
 	border-radius: 0%;
-	box-shadow: 0 0 0 dimgrey, inset 0 0 0 white;
+	/*box-shadow: 0 0 0 dimgrey, inset 0 0 0 white;
 	/* "unskew" & rotate by -A°/2 */
 	transform: skewY(-60deg) rotate(-15deg);
+	-webkit-transform: skewY(-60deg) rotate(-15deg);
 	background-size: 15% 15%, 15% 15%, cover;
 	line-height: 1.4;
 }
-
-
-
-/* arrow for middle link */
-
-/*.slice:nth-child(3) div:after {
-	position: absolute;
-	top: 13%; left: 50%;
-	margin: -.25em;
-	width: .5em; height: .5em;
-	box-shadow: 2px 2px 2px white;
-	transform: rotate(45deg);
-	background: linear-gradient(-45deg, #c9c9c9 50%, transparent 50%);
-	content: '';
-}*/
-
 
 
 /*titres*/
@@ -234,13 +192,23 @@ a.ctrl:focus {
 	text-align: center;
 }
 
-nav {
-	height: 250px;
-	width: 100%;
+.contact {
+	display: grid;
+	justify-content: center;
+	grid-template-columns: repeat(4, 200px);
+	grid-template-rows: repeat(2, 1fr);
 }
 
-#contact {
+.contact2 {
+	display: grid;
+	justify-content: center;
+	grid-template-rows: repeat(8, 35px);
+	display: none;
+}
+
+.intergrid {
 	text-align: center;
+	font-size: 18px;
 }
 
 #list-contact {
@@ -250,6 +218,11 @@ nav {
 	margin: 0 auto;
 	margin-top: 20px;
 	border-spacing: 50px 2px;
+}
+
+nav {
+	height: 250px;
+	width: 100%;
 }
 
 /*SECTION COMPETENCES*/
@@ -590,14 +563,14 @@ section {
 }
 
 .carres {
-	width: 100%;
+	width: 20%;
 	height: auto;
 	margin: 2%;
 	background-color: transparent;
 }
 .rectangle {
 	flex-wrap: wrap;
-	width: 100%;
+	width: 25%;
 	height: auto;
 	margin: 2%;
 	background-color: transparent;
@@ -623,3 +596,79 @@ figcaption {
     text-align: center;
 }
 
+
+/* REPONSIVE*/
+
+@media only screen and (max-width: 900px) {
+	h1 {
+		letter-spacing: 0.4em;
+	}
+	.timeline {
+		padding: 1rem;
+	}
+	.container {
+		flex-wrap: wrap;
+/*		flex-direction: column;
+*/	}
+	.carres {
+		width: 45%;
+		margin: auto;
+		margin-bottom: 10px;
+	}
+	.rectangle {
+		width: 45%;
+		margin: auto;
+		margin-bottom: 10px;
+	}
+	figure img {
+		max-width: 100%;
+	}
+	.contact {
+		display: none;
+	}
+	.contact2 {
+		display: grid;
+	}
+	body {
+	background-image: url('fondmobile.png');
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	}
+
+}
+@media only screen and (max-width: 640px) {
+	h1 {
+    letter-spacing: 0.2em;
+	}
+	.container {
+		flex-direction: column;
+	}
+	.carres {
+		width: 100%;
+		margin: auto;
+		margin-bottom: 10px;
+	}
+	.rectangle {
+		width: 100%;
+		margin: auto;
+		margin-bottom: 10px;
+	}
+	figure img {
+		max-width: 100%;
+	}
+	.contact {
+		display: none;
+	}
+	.contact2 {
+		display: grid;
+	}
+	.timeline .item:nth-child(odd):before {
+    left: 0.45rem;
+	}
+	.timeline .item:nth-child(even):before {
+    left: 0.45rem;
+	}
+	.ctrl {
+		top: 100%;
+	}
+}
