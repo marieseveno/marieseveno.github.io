@@ -228,7 +228,7 @@ a.ctrl:focus {
 /*SECTION A PROPOS*/
 
 .titleabout {
-	margin-left: 43%;
+	margin-left: 445px;
 }
 .containerabout {
 	display: flex;
@@ -236,16 +236,16 @@ a.ctrl:focus {
 }
 
 .bouquet {
-	margin-left: 100px;
-	float: left;
+	margin: auto;
+	margin-top: 5%;
 }
 
 .about {
 	padding-top: 25px;
 	/*width: 50%;
 	margin-left: 40%;*/
-	padding-right: 200px;
-	padding-left: 100px;
+	padding-right: 9%;
+	padding-left: 3%;
 }
 
 .about p {
@@ -254,10 +254,6 @@ a.ctrl:focus {
 	margin-top: 15px;
 }
 
-.about img {
-	  max-width: 100%;
-  	  height: auto;
-}
 
 .presentation {
 	background-color: rgba(132, 162, 148, 0.95);
@@ -666,6 +662,10 @@ figcaption {
 		float: none;
 		margin:  auto;
 	}
+	.bouquet img {
+	  max-width: 100%;
+  	  height: auto;
+}
 	.titleabout {
 		text-align: center;
 		margin: 0;
