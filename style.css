@@ -45,6 +45,59 @@ a:visited {
 	color: grey;
 }
 
+/*HEADER*/
+
+
+.photo {
+	text-align: center;
+}
+
+.photo img {
+	width: 175px;
+	height: 175px;
+	border: 3px double #fff;
+	border-radius: 50%;
+	margin-top: 50px;
+}
+
+.signature {
+	text-align: center;
+}
+
+.contact {
+	display: grid;
+	justify-content: center;
+	grid-template-columns: repeat(4, 200px);
+	grid-template-rows: repeat(2, 1fr);
+}
+
+.contact2 {
+	display: grid;
+	justify-content: center;
+	grid-template-rows: repeat(8, 35px);
+	display: none;
+}
+
+.intergrid {
+	text-align: center;
+	font-size: 18px;
+}
+
+#list-contact {
+	display: inline-block;
+	list-style-type: none;
+	font-size: 1.25em;
+	margin: 0 auto;
+	margin-top: 20px;
+	border-spacing: 50px 2px;
+}
+
+nav {
+	height: 250px;
+	width: 100%;
+}
+
+/*MENU*/
 
 /* generic styles for button & circular menu */
 
@@ -135,11 +188,11 @@ a.ctrl:focus {
  * after rotating, skew on Y by 90°-A°; here A° = the angle for 1 slice = 30° 
  */
 
-.slice:first-child { transform: rotate(-45deg) skewY(60deg); }
-.slice:nth-child(2) { transform: rotate(-15deg) skewY(60deg); }
-.slice:nth-child(3) { transform: rotate(15deg) skewY(60deg); }
-.slice:nth-child(4) { transform: rotate(45deg) skewY(60deg); }
-.slice:last-child { transform: rotate(75deg) skewY(60deg); }
+.slice:first-of-type { -webkit-transform: rotate(-45deg) skewY(60deg); }
+.slice:nth-of-type(2) { -webkit-transform: rotate(-15deg) skewY(60deg); }
+.slice:nth-of-type(3) { -webkit-transform: rotate(15deg) skewY(60deg); }
+.slice:nth-of-type(4) { -webkit-transform: rotate(45deg) skewY(60deg); }
+.slice:last-of-type { -webkit-transform: rotate(75deg) skewY(60deg); }
 
 
 /* covers for the inner part of the links so there's no hover trigger between
@@ -172,57 +225,47 @@ a.ctrl:focus {
 	line-height: 1.4;
 }
 
+/*SECTION A PROPOS*/
 
-/*titres*/
-
-
-.photo {
-	text-align: center;
+.titleabout {
+	margin-left: 42%;
+}
+.containerabout {
+	display: flex;
+	justify-content: space-evenly;
 }
 
-.photo img {
-	width: 175px;
-	height: 175px;
-	border: 3px double #fff;
-	border-radius: 50%;
-	margin-top: 50px;
+.bouquet {
+	float: left;
 }
 
-.signature {
-	text-align: center;
+.about {
+	padding-top: 25px;
+	/*width: 50%;
+	margin-left: 40%;*/
+	padding-right: 200px;
+	padding-left: 200px;
 }
 
-.contact {
-	display: grid;
-	justify-content: center;
-	grid-template-columns: repeat(4, 200px);
-	grid-template-rows: repeat(2, 1fr);
-}
-
-.contact2 {
-	display: grid;
-	justify-content: center;
-	grid-template-rows: repeat(8, 35px);
-	display: none;
-}
-
-.intergrid {
-	text-align: center;
+.about p {
 	font-size: 18px;
+	text-align: justify;
+	margin-top: 15px;
 }
 
-#list-contact {
-	display: inline-block;
-	list-style-type: none;
-	font-size: 1.25em;
-	margin: 0 auto;
-	margin-top: 20px;
-	border-spacing: 50px 2px;
+.about img {
+	  max-width: 100%;
+  	  height: auto;
 }
 
-nav {
-	height: 250px;
+.presentation {
+	background-color: rgba(132, 162, 148, 0.95);
+	padding-top: 20px;
+	min-height: 100vh;
 	width: 100%;
+	z-index: 10000;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 /*SECTION COMPETENCES*/
@@ -282,6 +325,16 @@ nav {
 
 .c85 {
 	width: 85%;
+	background-color: #84A295;
+}
+
+.c95 {
+	width: 95%;
+	background-color: #84A295;
+}
+
+.c80 {
+	width: 80%;
 	background-color: #84A295;
 }
 
@@ -598,7 +651,26 @@ figcaption {
 
 
 /* REPONSIVE*/
+@media only screen and (max-width: 1024px) {
+	.containerabout {
+		flex-direction: column;
+	}
+	.about {
+		width: 90%;
+		margin: auto;
+		padding: 0;
+		padding-bottom: 20px;
+	}
+	.bouquet {
+		float: none;
+		margin:  auto;
+	}
+	.titleabout {
+		text-align: center;
+		margin: 0;
+	}
 
+}
 @media only screen and (max-width: 900px) {
 	h1 {
 		letter-spacing: 0.4em;
@@ -610,6 +682,7 @@ figcaption {
 		flex-wrap: wrap;
 /*		flex-direction: column;
 */	}
+	
 	.carres {
 		width: 45%;
 		margin: auto;
