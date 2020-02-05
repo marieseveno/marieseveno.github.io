@@ -717,7 +717,7 @@ footer {
 		display: grid;
 	}
 	body {
-    	background: url(...) no-repeat center center fixed; 
+    	background: url("fondmobile.png") no-repeat center center fixed; 
     	-webkit-background-size: 100%; 
     	-moz-background-size: 100%; 
     	-o-background-size: 100%; 
