@@ -596,7 +596,7 @@ section {
 }
 
 .real {
-	background-color: rgba(132, 162, 148, 0.85);
+	background-color: rgba(132, 162, 148, 0.95);
 	padding-top: 20px;
 	min-height: 100vh;
 	width: 100%;
@@ -649,7 +649,8 @@ figcaption {
 /* REPONSIVE*/
 @media only screen and (max-width: 1024px) {
 	.containerabout {
-		flex-direction: column;
+		flex-direction: column-reverse;
+		flex-wrap: wrap-reverse;
 	}
 	.about {
 		width: 90%;
@@ -667,7 +668,7 @@ figcaption {
 }
 	.titleabout {
 		text-align: center;
-		margin: 0;
+		margin: 10px;
 	}
 
 }
