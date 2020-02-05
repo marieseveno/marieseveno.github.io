@@ -645,8 +645,19 @@ figcaption {
     text-align: center;
 }
 
+/*FOOTER*/
+
+footer {
+	background-color: #F2F0EB;
+	padding-top: 20px;
+	width: 100%;
+	min-height: 200px;
+	text-align: center;
+}
+
 
 /* REPONSIVE*/
+
 @media only screen and (max-width: 1024px) {
 	.containerabout {
 		flex-direction: column-reverse;
@@ -670,7 +681,14 @@ figcaption {
 		text-align: center;
 		margin: 10px;
 	}
-
+	footer {
+		margin: auto;
+	}
+		body {
+	background-image: url('fondmobile.png');
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	}
 }
 @media only screen and (max-width: 900px) {
 	h1 {
