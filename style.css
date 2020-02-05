@@ -718,7 +718,7 @@ footer {
 	}
 	body {
 	background-image: url('fondmobile.png');
-	background-attachment: fixed;
+	background-attachment: scroll;
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
 	}
