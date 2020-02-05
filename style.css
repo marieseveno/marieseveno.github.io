@@ -619,7 +619,7 @@ section {
 }
 .rectangle {
 	flex-wrap: wrap;
-	width: 25%;
+	width: 20%;
 	height: auto;
 	margin: 2%;
 	background-color: transparent;
@@ -743,7 +743,7 @@ figcaption {
     left: 0.45rem;
 	}
 	.ctrl {
-		top: 100%;
+		top: 95%;
 	}
 }
 @media only screen and (max-height: 600px) {
