@@ -594,6 +594,10 @@ section {
 	display: flex;
 	justify-content: space-evenly;
 }
+.flexbox {
+	display: flex;
+	justify-content: space-evenly;
+}
 
 .real {
 	background-color: rgba(132, 162, 148, 0.95);
@@ -668,6 +672,9 @@ footer p {
 	.container {
 		flex-wrap: wrap;
 		flex-direction: column;
+	}
+		.flexbox {
+		flex-wrap: wrap;
 	}
 	.reverse {
 		flex-wrap: wrap-reverse;
