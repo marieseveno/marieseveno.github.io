@@ -719,6 +719,7 @@ footer {
 	body {
 	background-image: url('img/fondmobile.png');
 	background-attachment: fixed;
+	-webkit-background-attachment: scroll;
 	background-repeat: no-repeat;
 	-webkit-background-size: 100% 100%;
 	background-size: 100% 100%;
