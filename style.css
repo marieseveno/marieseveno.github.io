@@ -12,7 +12,7 @@ body {
 	position: relative;
 	background: #F2F0EB;
 	font-family: 'EB Garamond', serif;
-	background-image: url('fond2.png');
+	background-image: url('img/fond2.png');
 	background-size: 100% 100%;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
@@ -717,10 +717,11 @@ footer {
 		display: grid;
 	}
 	body {
-	background-image: url('fondmobile.png');
+	background-image: url('img/fondmobile.png');
 	background-attachment: fixed;
 	background-repeat: no-repeat;
-	-webkit-background-size: cover;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
 	}
 
 }
@@ -760,7 +761,7 @@ footer {
 		top: 95%;
 	}
 }
-@media only screen and (max-height: 600px) {
+@media only screen and (max-height: 700px) {
 	.ctrl {
 		top: 115%;
 	}
