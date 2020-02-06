@@ -788,4 +788,7 @@ footer p {
       -o-background-size: cover;
       background-size: cover;
 }
+		.ctrl {
+		top: 95%;
+	}
 }
