@@ -649,10 +649,12 @@ figcaption {
 
 footer {
 	background-color: #F2F0EB;
-	padding-top: 20px;
+	padding: 10px;
 	width: 100%;
-	min-height: 200px;
 	text-align: center;
+}
+footer p {
+	margin:0;
 }
 
 
