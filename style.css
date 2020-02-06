@@ -769,6 +769,9 @@ footer {
 }
 @supports (-webkit-overflow-scrolling: touch) {
   /* CSS specific to iOS devices only */ 
+	body {
+		background-image: none;
+	}
   body:after{
       content:"";
       position:fixed; /* stretch a fixed position to the whole screen */
@@ -777,7 +780,7 @@ footer {
       left:0;
       right:0;
       z-index:-1; /* needed to keep in the background */
-      background: url(img/fond2.png) center center;
+      background: url(img/fondmobile.png) center center;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
