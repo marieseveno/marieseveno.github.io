@@ -665,6 +665,14 @@ footer p {
 		flex-direction: column-reverse;
 		flex-wrap: wrap-reverse;
 	}
+	.container {
+		flex-wrap: wrap;
+		flex-direction: column;
+	}
+	.reverse {
+		flex-wrap: wrap-reverse;
+		flex-direction: column-reverse;
+	}
 	.about {
 		width: 90%;
 		margin: auto;
@@ -685,6 +693,9 @@ footer p {
 	}
 	footer {
 		margin: auto;
+	}
+	.titlebox {
+		letter-spacing: 0.4em;
 	}
 }
 @media only screen and (max-width: 900px) {
