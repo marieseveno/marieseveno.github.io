@@ -7,7 +7,6 @@ html, body {
 }
 
 body {
-
 /*	overflow: scroll;*/
 	position: relative;
 	background: #F2F0EB;
@@ -17,30 +16,24 @@ body {
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 }
-
 header {
 	min-height: 100%;
 }
-
 p {
 	margin-bottom: 10px;
 }
-
 h1 {
 	margin: 20px;
 	letter-spacing: 0.5em;
 }
-
 a {
 	cursor: pointer;
 	text-decoration: none;
 	outline: none;
 }
-
 a:link {
 	color: #000;
 }
-
 a:visited {
 	color: grey;
 }
@@ -616,14 +609,14 @@ section {
 }
 
 .carres {
-	width: 20%;
+	width: auto;
 	height: auto;
 	margin: 2%;
 	background-color: transparent;
 }
 .rectangle {
 	flex-wrap: wrap;
-	width: 20%;
+	width: min-content;
 	height: auto;
 	margin: 2%;
 	background-color: transparent;
