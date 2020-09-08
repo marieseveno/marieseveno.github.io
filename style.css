@@ -7,6 +7,7 @@ html, body {
 }
 
 body {
+
 /*	overflow: scroll;*/
 	position: relative;
 	background: #F2F0EB;
@@ -16,24 +17,30 @@ body {
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 }
+
 header {
 	min-height: 100%;
 }
+
 p {
 	margin-bottom: 10px;
 }
+
 h1 {
 	margin: 20px;
 	letter-spacing: 0.5em;
 }
+
 a {
 	cursor: pointer;
 	text-decoration: none;
 	outline: none;
 }
+
 a:link {
 	color: #000;
 }
+
 a:visited {
 	color: grey;
 }
@@ -170,7 +177,6 @@ a.ctrl:focus {
 
 
 /* 
-
  * rotate each slice at the right angle = (A/2)° + (k - (n+1)/2)*A°
  * where A is the angle of 1 slice (30° in this case)
  * k is the number of the slice (in {1,2,3,4,5} here)
@@ -189,7 +195,6 @@ a.ctrl:focus {
 
 
 /* covers for the inner part of the links so there's no hover trigger between
-
    star button & menu links; give them a red background to see them */
 
 .slice:after {
@@ -506,7 +511,6 @@ section {
   	background-color: #F2F0EB;
 	text-align: left;
 }
-
 .box2 p{
 	margin-left: 20px;
 }*/
@@ -587,10 +591,6 @@ section {
 	display: flex;
 	justify-content: space-evenly;
 }
-.flexbox {
-	display: flex;
-	justify-content: space-evenly;
-}
 
 .real {
 	background-color: rgba(132, 162, 148, 0.95);
@@ -665,9 +665,6 @@ footer p {
 	.container {
 		flex-wrap: wrap;
 		flex-direction: column;
-	}
-		.flexbox {
-		flex-wrap: wrap;
 	}
 	.reverse {
 		flex-wrap: wrap-reverse;
