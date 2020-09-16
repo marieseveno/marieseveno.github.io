@@ -694,12 +694,12 @@ footer p {
 		flex-direction: column;
 	}
 	.carres {
-		width: 45%;
+		width: 100%;
 		margin: auto;
 		margin-bottom: 20px;
 	}
 	.rectangle {
-		width: 45%;
+		width: 100%;
 		margin: auto;
 		margin-bottom: 20px;
 	}
