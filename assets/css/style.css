@@ -223,14 +223,14 @@ a.ctrl:focus {
 #presentation {
 	position: relative;
 	padding-top: 20px;
-	min-height: 100vh;
+/* 	min-height: 100vh; */
 	width: 100%;
 	z-index: 999;
 	padding-left: 10px;
 	padding-right: 10px;
 }
 .titleabout {
-	margin-left: 445px;
+	text-align: center;
 }
 .bouquet {
 	position: relative;
@@ -241,15 +241,17 @@ a.ctrl:focus {
 	text-align: center;
 }
 .containerabout {
+	box-sizing: content-box;
 	position: absolute;
 	top: 10%;
 	left: 25%;
-	height: 85%;
+	height: auto;
 	width: 50%;
 	background-color: rgba(132, 162, 148, 0.85);
 	border: 0.5px solid #84A295;
 	border-radius: 5px;
 	box-shadow: 2px 2px 2px 1px rgba(132, 162, 148, .2);
+	margin-top: 15px;
 }
 .about {
 	padding: 10%; 
@@ -679,8 +681,13 @@ footer p {
 
 @media only screen and (max-width: 1024px) {
 	.containerabout {
+		position: static;
+		width: 100%;
 		flex-direction: column-reverse;
 		flex-wrap: wrap-reverse;
+	}
+	.bouquet{
+		display: none;
 	}
 	.container {
 		flex-wrap: wrap;
