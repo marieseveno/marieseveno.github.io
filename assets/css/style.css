@@ -743,6 +743,12 @@ footer p {
 	.timeline {
 		padding: 1rem;
 	}
+	.about {
+		width: 90%;
+		margin: auto;
+		padding: 0;
+		padding-bottom: 20px;
+	}
 	.container {
 		display: flex;
 		flex-wrap: wrap;
@@ -784,6 +790,12 @@ footer p {
 	}
 	.container {
 		flex-direction: column;
+	}
+	.about {
+		width: 90%;
+		margin: auto;
+		padding: 0;
+		padding-bottom: 20px;
 	}
 	.carres {
 		width: 100%;
