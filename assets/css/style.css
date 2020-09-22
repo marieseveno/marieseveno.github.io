@@ -826,11 +826,7 @@ footer p {
 		top: 95%;
 	}
 }
-@media only screen and (max-height: 700px) {
-	/*.ctrl {
-		top: 115%;*/
-	}
-}
+
 @supports (-webkit-overflow-scrolling: touch) {
   /* CSS specific to iOS devices only */ 
 	body {
