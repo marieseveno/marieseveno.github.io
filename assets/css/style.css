@@ -590,7 +590,6 @@ section {
 .container {
 	display: flex;
 	justify-content: space-evenly;
-	flex-wrap: wrap;
 }
 
 .real {
@@ -617,7 +616,7 @@ section {
 }
 
 .rectangle {
-	/*flex-wrap: wrap;*/
+	flex-wrap: wrap;
 	width: min-content;
 	height: auto;
 	margin: 2%;
@@ -633,6 +632,7 @@ figure {
 
 figure a img {
     max-width: 300px;
+    height: 100%;
 }
 
 figcaption {
@@ -690,17 +690,16 @@ footer p {
 		display: none;
 	}
 	.container {
-		display: flex;
 		flex-wrap: wrap;
-		/*flex-direction: column;*/
+		flex-direction: column;
 	}
 	.carres {
-		width: 45%;
+		width: 100%;
 		margin: auto;
 		margin-bottom: 20px;
 	}
 	.rectangle {
-		width: 45%;
+		width: 100%;
 		margin: auto;
 		margin-bottom: 20px;
 	}
@@ -743,26 +742,19 @@ footer p {
 	.timeline {
 		padding: 1rem;
 	}
-	.about {
-		width: 90%;
-		margin: auto;
-		padding: 0;
-		padding-bottom: 20px;
-	}
 	.container {
-		display: flex;
 		flex-wrap: wrap;
 /*		flex-direction: column;
 */	}
 	
 	.carres {
-		width: 45%;
-		/*margin: auto;*/
+		width: 100%;
+		margin: auto;
 		margin-bottom: 10px;
 	}
 	.rectangle {
-		width: 45%;
-		/*margin: auto;*/
+		width: 100%;
+		margin: auto;
 		margin-bottom: 10px;
 	}
 	figure a img {
@@ -790,12 +782,6 @@ footer p {
 	}
 	.container {
 		flex-direction: column;
-	}
-	.about {
-		width: 90%;
-		margin: auto;
-		padding: 0;
-		padding-bottom: 20px;
 	}
 	.carres {
 		width: 100%;
@@ -826,7 +812,11 @@ footer p {
 		top: 95%;
 	}
 }
-
+@media only screen and (max-height: 700px) {
+	.ctrl {
+		top: 115%;
+	}
+}
 @supports (-webkit-overflow-scrolling: touch) {
   /* CSS specific to iOS devices only */ 
 	body {
@@ -842,7 +832,7 @@ footer p {
       z-index:-1; /* needed to keep in the background */
       background: url(../img/fondmobile.png) center center;
       -webkit-background-size: cover;
-      -moz-background-size: cover ;
+      -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
 }
