@@ -590,6 +590,7 @@ section {
 .container {
 	display: flex;
 	justify-content: space-evenly;
+	flex-wrap: wrap;
 }
 
 .real {
@@ -616,7 +617,6 @@ section {
 }
 
 .rectangle {
-	flex-wrap: wrap;
 	width: min-content;
 	height: auto;
 	margin: 2%;
@@ -632,7 +632,6 @@ figure {
 
 figure a img {
     max-width: 300px;
-    height: 100%;
 }
 
 figcaption {
@@ -690,16 +689,17 @@ footer p {
 		display: none;
 	}
 	.container {
+		display: flex;
 		flex-wrap: wrap;
 		flex-direction: column;
 	}
 	.carres {
-		width: 100%;
+		width: 45%;
 		margin: auto;
 		margin-bottom: 20px;
 	}
 	.rectangle {
-		width: 100%;
+		width: 45%;
 		margin: auto;
 		margin-bottom: 20px;
 	}
