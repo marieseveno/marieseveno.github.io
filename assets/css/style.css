@@ -833,10 +833,10 @@ footer p {
       right:0;
       z-index:-1; /* needed to keep in the background */
       background: url(../img/fondmobile.png) center center;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
+      -webkit-background-size: contain;
+      -moz-background-size: contain;
+      -o-background-size: contain;
+      background-size: contain;
 }
 		.ctrl {
 		top: 95%;
