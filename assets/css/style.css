@@ -617,7 +617,7 @@ section {
 }
 
 .rectangle {
-	flex-wrap: wrap;
+	/*flex-wrap: wrap;*/
 	width: min-content;
 	height: auto;
 	margin: 2%;
@@ -633,7 +633,6 @@ figure {
 
 figure a img {
     max-width: 300px;
-    /*height: 100%;*/
 }
 
 figcaption {
@@ -697,13 +696,13 @@ footer p {
 	}
 	.carres {
 		width: 45%;
-		/*margin: auto;*/
+		margin: auto;
 		margin-bottom: 20px;
 	}
 	.rectangle {
 		width: 45%;
-/*		margin: auto;
-*/		margin-bottom: 20px;
+		margin: auto;
+		margin-bottom: 20px;
 	}
 	figure a img {
 		max-width: 100%;
@@ -714,8 +713,8 @@ footer p {
 	}
 	.about {
 		width: 90%;
-/*		margin: auto;
-*/		padding: 0;
+		margin: auto;
+		padding: 0;
 		padding-bottom: 20px;
 	}
 /*	.bouquet {
@@ -816,8 +815,8 @@ footer p {
 	}
 }
 @media only screen and (max-height: 700px) {
-	.ctrl {
-		top: 115%;
+	/*.ctrl {
+		top: 115%;*/
 	}
 }
 @supports (-webkit-overflow-scrolling: touch) {
