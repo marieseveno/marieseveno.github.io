@@ -292,13 +292,13 @@ a.ctrl:focus {
     border-bottom-left-radius: 5px;
 }
 
-.c90 {
-	width: 90%;
+.c80 {
+	width: 80%;
 	background-color: #84A295;
 }
 
-.c65 {
-    width: 65%;
+.c60 {
+    width: 60%;
     background-color: #84A295;
 }
 
@@ -307,8 +307,8 @@ a.ctrl:focus {
     background-color: #84A295;
 }
 
-.c25 {
-    width: 25%;
+.c65 {
+    width: 65%;
     background-color: #84A295;
 }
 
